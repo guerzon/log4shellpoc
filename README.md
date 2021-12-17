@@ -18,6 +18,10 @@ docker build . -t log4shellpoc
 docker run --rm -p 8080:8080 --name log4shell-poc-app log4shellpoc
 ```
 
+### Result
+
+![](screenshots/recording.gif)
+
 ## Notes
 
 Spring Boot project inspired by: https://github.com/christophetd/log4shell-vulnerable-app/
