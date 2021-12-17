@@ -8,12 +8,16 @@ This proof-of-concept application for CVE-2021-44228 (a.k.a log4shell) is a part
 Run:
 
 ```bash
-docker run --rm -p 8080:8080 --name log4shell-poc-app ghcr.io/guerzon/log4shellpoc-app:latest
+docker run --rm -p 8080:8080 --name log4shell-poc-app ghcr.io/guerzon/log4shellpoc:latest
 ```
 
-Build and run:
+Or build and run:
 
 ```bash
-docker build . -t log4shellpoc-app
-docker run --rm -p 8080:8080 --name log4shell-poc-app log4shellpoc-app
+docker build . -t log4shellpoc
+docker run --rm -p 8080:8080 --name log4shell-poc-app log4shellpoc
 ```
+
+## Notes
+
+Spring Boot project inspired by: https://github.com/christophetd/log4shell-vulnerable-app/

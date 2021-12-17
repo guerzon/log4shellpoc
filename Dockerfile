@@ -1,9 +1,10 @@
-FROM gradle:7.3.1-jdk11-alpine AS builder
+FROM gradle:7.3.1-jdk17 AS builder
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle bootJar --no-daemon
 
-FROM openjdk:11-jdk-slim
+FROM openjdk:8u181-jdk-alpine
+LABEL org.opencontainers.image.source https://github.com/guerzon/log4shellpoc
 EXPOSE 8080
 RUN mkdir /app
 COPY --from=builder /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
